@@ -1,7 +1,7 @@
 'use strict';
 
 var current_username;
-var baseUrl = 'http://localhost:5000/';
+var baseUrl = 'https://boiling-springs-6652.herokuapp.com/';
 /* Controllers */
 app.controller('loginController', ['$scope','$http','$location','$window','$cookieStore',function($scope,$http,$location,$window,$cookieStore) {
 

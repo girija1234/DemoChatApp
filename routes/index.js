@@ -33,7 +33,7 @@ exports.createUser = function(req, res) {
         if(error) res.sendStatus(error);
 
         //res.send(201);
-        res.render('home');
+
     });
 };
 exports.findUser = function(req, res) {
