@@ -2,6 +2,8 @@ var express = require('express')
   , app = express()
   , http = require('http')
   , server = http.createServer(app)
+    ,bodyParser = require('body-parser')
+    ,errorhandler = require('errorhandler')
   , routes = require('./routes')
   , socket = require('./routes/socket.js')
    , mongoose = require('mongoose')
@@ -16,7 +18,6 @@ if(process.env.PORT) {
     io.set("polling duration", 10); 
   });  
 }
-var bodyParser = require('body-parser');
 // Configuration
 var config = require('./config')(app, express);
 

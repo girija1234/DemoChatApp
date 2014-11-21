@@ -40,12 +40,12 @@ module.exports = function(app, express, mongoose){
     //app.use(app.router);
     // development only
     if ('development' == app.get('env')) {
-        app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+        app.use(errorhandler());
     }
 
     // production only
     if ('production' == app.get('env')) {
-        app.use(express.errorHandler());
+        app.use(errorhandler());
     }
   return config;
 
