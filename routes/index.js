@@ -30,7 +30,7 @@ var Message =mongoose.model('message',msgSchema);
 exports.createUser = function(req, res) {
     var user = new User(req.body);
     user.save(function(error, user) {
-        if(error) res.send(500);
+        if(error) res.sendStatus(error);
 
         //res.send(201);
         res.render('home');
@@ -40,10 +40,10 @@ exports.findUser = function(req, res) {
     var username = req.body.username;
     var password = req.body.password;
     User.find({username: username,password: password}, function(error, currUser) {
-        if(error)res.send(500);
+        if(error)res.sendStatus(error);
         User.find({username: username,password: password})
         .update({isActive:'true'},function(error, message) {
-            if(error) res.send(500);
+            if(error) res.sendStatus(error);
             //res.send(201);
             res.json({ message: message });
         });
@@ -56,7 +56,7 @@ exports.findUser = function(req, res) {
 exports.findAllUser = function(req, res) {
     var name = req.params.name;
     User.find({username:{$ne : name}}, function(error, allUsers) {
-        if(error) res.send(500);
+        if(error) res.sendStatus(error);
         res.json({ allUsers: allUsers });
     });
 };
@@ -64,7 +64,7 @@ exports.findAllUser = function(req, res) {
 exports.saveMessage = function(req, res) {
     var message = new Message(req.body);
     message.save(function(error, message) {
-        if(error) res.send(500);
+        if(error) res.sendStatus(error);
         //res.send(201);
         res.json({ message: message });
     });
@@ -73,7 +73,7 @@ exports.saveMessage = function(req, res) {
 exports.findAllMessage = function(req, res) {
     var query = Message.find().sort({$natural : -1});
     query.exec(function(error, allMessages) {
-        if(error) res.send(500);
+        if(error) res.sendStatus(error);
         res.json({ allMessages: allMessages });
     });
 };
