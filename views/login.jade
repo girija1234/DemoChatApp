@@ -1,0 +1,68 @@
+!!!
+html(ng-app="myApp")
+    head
+        meta(charset='utf8')
+        base(href='/')
+        title Chat Demo
+        link(rel='stylesheet', href='/css/bootstrap.min.css')
+        style(type='text/css')
+            body {
+                padding-top: 10px
+            }
+
+            .radioMrgn {
+                margin: 0 2px 2px !important;
+            }
+
+            .blank {
+                height: 10px;
+            }
+        link(rel='stylesheet', href='/css/bootstrap-responsive.min.css')
+        link(rel='stylesheet', href='/css/app.css')
+    body
+        .navbar-inner
+            .pull-left
+                h3 Demo Chat Application
+            .form-inline.pull-right
+                form(role='form',ng-controller="loginController")
+                    p.lead Enter your credentials :
+                    input(type='text', ng-model="loginuser.username" ,name="username", placeholder='Enter Username')
+                    &nbsp;&nbsp;&nbsp;
+                    input(type='password',ng-model="loginuser.password" , name="password", placeholder='Password')
+                    &nbsp;&nbsp;&nbsp;
+                    button.btn.btn-default(type='submit',ng-click="authenticateUser()") Login
+                    &nbsp;
+        .container
+            .pull-right
+                &nbsp;
+                h1 Sign Up
+                p.lead Enjoy your chat...
+                form(role='form',ng-controller="loginController",style='max-width: 300px;')
+                    .form-group
+                        input.form-control(type='text', ng-model="user.firstName" ,name="firstName", placeholder='Enter First Name')
+                        input.form-control(type='text',ng-model="user.lastName" , name="lastName", placeholder='Enter Last Name')
+                        input.form-control(type='text', ng-model="user.username" ,name="username", placeholder='Enter Username')
+                        input.form-control(type='password',ng-model="user.password" , name="password", placeholder='Enter Password')
+                        input.form-control(type='password',ng-model="user.password" , name="cnfpassword", placeholder='Confirm Password')
+                        input.form-control(type='text', ng-model="user.contact" ,name="contact", placeholder='Enter Mobile Number')
+                        br
+                        .blank
+                        //input.form-control(type='text',ng-model="chat.user.maritalStatus" , name="maritalStatus",placeholder='Single/Married', value='SINGLE')
+                        input.form-control(type='text', ng-model="user.birthDate" ,name="birthDate",placeholder='DOB ( yyyy-mm-dd )', value='2014-10-10')
+                        br
+                        input.form-control.radioMrgn(type='checkbox',ng-model="termsncond.tc" , name="tc")span Term & Condition
+                        .blank
+                    button.btn.btn-default(type='submit',ng-click="createUser()") Sign Up
+                    &nbsp;
+    script(src='js/lib/jquery.min.js')
+    script(src='js/lib/bootstrap.min.js')
+    script(src='js/lib/angular/angular.js')
+    script(src='js/lib/angular/angular-resource.js')
+    script(src='js/lib/angular/angular-route.js')
+    script(src='js/lib/angular/angular-cookies.js')
+    script(src='/socket.io/socket.io.js')
+    script(src='js/app.js')
+    script(src='js/services.js')
+    script(src='js/controllers.js')
+    script(src='js/filters.js')
+    script(src='js/directives.js')
