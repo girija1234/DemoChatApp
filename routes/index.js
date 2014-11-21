@@ -4,7 +4,9 @@
  */
 var mongoose = require('mongoose');
 //mongoose.connect('mongodb://localhost/chatDemo');
-var uristring =process.env.MONGOLAB_URI ||process.env.MONGOHQ_URL || 'mongodb://localhost/chatDemo';
+var uristring = 'mongodb://heroku_app31833432:adish1234@ds053080.mongolab.com:53080/heroku_app31833432';
+
+//var uristring =process.env.MONGOLAB_URI ||process.env.MONGOHQ_URL || 'mongodb://localhost/chatDemo';
 mongoose.connect(uristring);
 
 var Schema = mongoose.Schema;
