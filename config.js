@@ -35,7 +35,7 @@ module.exports = function(app, express, mongoose){
 
     app.use(bodyParser.json());                          // parse application/json
     app.use(bodyParser.urlencoded({ extended: true }));  // parse application/x-www-form-urlencoded
-    
+
     app.use(express.static(__dirname + '/public'));
     //app.use(app.router);
     // development only
