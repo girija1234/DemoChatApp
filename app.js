@@ -16,7 +16,7 @@ if(process.env.PORT) {
     io.set("polling duration", 10); 
   });  
 }
-
+var bodyParser = require('body-parser');
 // Configuration
 var config = require('./config')(app, express);
 
