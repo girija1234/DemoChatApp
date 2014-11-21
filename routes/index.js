@@ -3,7 +3,10 @@
  * GET home page.
  */
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/chatDemo');
+//mongoose.connect('mongodb://localhost/chatDemo');
+var uristring =process.env.MONGOLAB_URI ||process.env.MONGOHQ_URL || 'mongodb://localhost/chatDemo';
+mongoose.connect(uristring);
+
 var Schema = mongoose.Schema;
 
 var userSchema = new Schema({
