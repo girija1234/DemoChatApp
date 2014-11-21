@@ -34,6 +34,18 @@ app.get('/logout/:name', routes.logout);
 // redirect all others to the index (HTML5 history)
 app.get('*', routes.index);
 
+app.use(bodyParser.json());                          // parse application/json
+app.use(bodyParser.urlencoded({ extended: true }));  // parse application/x-www-form-urlencoded
+
+// development only
+if ('development' == app.get('env')) {
+    app.use(errorhandler());
+}
+
+// production only
+if ('production' == app.get('env')) {
+    app.use(errorhandler());
+}
 // Socket.io Communication
 
 io.sockets.on('connection', socket);
