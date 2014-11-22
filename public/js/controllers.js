@@ -24,7 +24,7 @@ app.controller('loginController', ['$scope','$http','$location','$window','$cook
             $scope.termsncond = '';
             $scope.user = new User();
             $cookieStore.put('currUser', data.currUser);
-
+            $window.location.href =  baseUrl;
         });
     }
 

@@ -41,7 +41,7 @@ exports.createUser = function(req, res) {
     user.save(function(error, user) {
         if(error) res.sendStatus(error);
 
-        //res.send(201);
+        res.json({ user: user });
 
     });
 };
