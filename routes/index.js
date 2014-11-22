@@ -14,7 +14,7 @@ mongoose.connect(uristring, function (err, res) {
         console.log ('Succeeded connected to: ' + uristring);
     }
 });
-mongoose.connect(uristring);
+//mongoose.connect(uristring);
 
 var Schema = mongoose.Schema;
 
