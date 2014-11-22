@@ -3,13 +3,13 @@
   "version": "0.0.1",
   "private": true,
   "engines": {
-    "node": "0.8.x",
+    "node": "0.10.0",
     "npm": "1.1.x"
   },
   "dependencies": {
     "express": "latest",
     "jade": ">= 0.26.1",
     "mongoose": "~3.8.19",
-    "socket.io": ">= 0.9.6"
+    "socket.io": ">= 0.9.13"
   }
 }
