@@ -40,8 +40,9 @@ exports.createUser = function(req, res) {
     var user = new User(req.body);
     user.save(function(error, user) {
         if(error) res.sendStatus(error);
-
+        res.setHeader('Content-Type', 'application/json');
         res.json({ user: user });
+        res.end();
 
     });
 };
