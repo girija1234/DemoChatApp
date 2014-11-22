@@ -42,7 +42,7 @@ exports.createUser = function(req, res) {
         if(error) res.sendStatus(error);
         res.setHeader('Content-Type', 'application/json');
         res.json({ user: user });
-        
+
 
     });
 };
